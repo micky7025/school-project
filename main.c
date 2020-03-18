@@ -5,8 +5,8 @@
 #define DQ_pin 2  
 
 // 設定網路基地台SSID跟密碼
-char ssid[] = "MySSID";
-char pass[] = "12345678";
+char ssid[] = "米奇妙妙屋";
+char pass[] = "69696699";
  
 float temp_f;   // 從DS18B20讀取的值
 String tempe1="";      // 顯示溫度的字串
