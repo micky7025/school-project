@@ -1,6 +1,7 @@
 #include <OneWire.h>
 #include <DallasTemperature.h>
-#define pin 2
+const int oneWireBus = 4; 
+
 
 OneWire oneWire(pin);
 DallasTemperature sensors(&oneWire); //call DataBase
@@ -10,6 +11,8 @@ void setup (void)
     Serial.begin(9600);
     sensors.begin();
   }
+
+
 void loop (void)
   {
     sensors.requestTemperatures();
