@@ -5,7 +5,8 @@
 #include <TridentTD_LineNotify.h>
 // 修改成上述寄到登入郵箱的 Token號碼
 #define LINE_TOKEN "Ll3wShTmiBHR38LL0rwBAUSYuJP3KkeMMLdR5mIgWRR"
-#define DQ_pin 2  //D4
+
+const int oneWireBus = 4;
 
 // 設定網路基地台SSID跟密碼
 char ssid[] = "米奇妙妙屋";
@@ -17,7 +18,7 @@ String tempe1 = "";   // 顯示溫度的字串
 unsigned long previousMillis = 0;        // 儲存上次讀取的時間
 const long interval = 2000;              // 感測器讀取之間隔
 
-OneWire oneWire(DQ_pin);
+OneWire oneWire(oneWireBus);
 DallasTemperature sensors(&oneWire);  // 呼叫函式庫
 
 void setup(void)
