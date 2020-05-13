@@ -11,7 +11,8 @@ char pass[] = "69696699";   // 設定網路基地台,SSID和密碼
 
 const int oneWireBus = 4;
 float temp_f;   // 從DS18B20讀取的值
-String tempe1 = "";   // 顯示字串 
+String tempe1 = "";   // 顯示字串
+
 
 OneWire oneWire(oneWireBus);
 DallasTemperature sensors(&oneWire);  // 呼叫函式庫
@@ -51,18 +52,21 @@ void loop(void)
 
     else if(temp_f > 30){
       tempe1 = " \n 溫度過高!";
+     
     }
 
     else if(temp_f < 20){
       tempe1 = " \n 溫度過低!";
+     
     }
 
     else {
-      tempe1 = "\n 現在溫度為：" + String(temp_f) + "℃";    // 檢查值是否錯誤,若正常則輸出
+      tempe1 = "\n 現在溫度為：" + String(temp_f) + "℃";
+                            // 檢查值是否錯誤,若正常則輸出
     }
     Serial.println(tempe1);
 
     LINE.notify(tempe1);   //output
-    
+
     delay(1000); //10分鐘量測一次
 }
