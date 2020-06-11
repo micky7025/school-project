@@ -33,7 +33,7 @@ void Jud(int judge){
             data[i]=0;
         }
         
-        data[n]+=1;    
+        data[n-1]+=1;    
         for(i=0;i<n;i++){
             if(data[i]==2){
                 data[i]=0;
@@ -41,18 +41,24 @@ void Jud(int judge){
             }
         }                   
     }
-    printf("輸入值的二的補數為:");   
+    printf("\n輸入值的二的補數為:");   
     for(i=0;i<n;i++)
         printf("%d",data[i]);
+   	printf("\n______________________________\n");
     
 }
 
 int main(){
-        
+    
+	printf("\n______________________________\n");    
     printf("輸入一十六進制值");
     scanf("%x", &input);
-    printf("輸入正負位元");
-    scanf("%x", &judge);
+    do{
+    	printf("輸入正負位元");
+    	scanf("%x", &judge);
+    	if(judge>1||judge<0)
+    		printf("請輸入正確的正負位元\n");
+	}while(judge>1||judge<0);
     doit(input);
     Jud(judge);
     
